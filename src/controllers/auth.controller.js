@@ -36,6 +36,40 @@ const userRegisterCtrl = async (req, res, next) => {
 }
 
 
+const userLoginCtrl = async (req, res, next) => {
+    try {
+        const { email, password } = req.body
+        const user = await UserModel.findOne({ email }).select("+password")
+        if (!user) {
+            return res.status(401).json({
+                message: "Email or Password Invalid"
+            })
+        }
+
+        const isValidPassword = await user.comparePassword(password)
+        if (!isValidPassword) {
+            return res.status(401).json({
+                message: "Email or Password Invalid"
+            })
+        }
+
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: process.env.JWT_EXPIRATION })
+
+        res.cookie("token", token)
+        res.status(201).json({
+            user: {
+                _id: user._id,
+                email: user.email,
+                name: user.name
+            },
+            token
+        })
+
+    } catch (error) {
+        next(error)
+    }
+}
 module.exports = {
-    userRegisterCtrl
+    userRegisterCtrl,
+    userLoginCtrl
 }

@@ -1,0 +1,47 @@
+
+AUTG APIS
+
+
+USER REGISTER API:
+POST  ==>  localhost:5000/api/auth/register
+
+    {
+        "name" : "test",
+        "email" : "test@gmail.com"   ,
+        "password" : "test123"
+    }
+
+curl:
+curl --location 'localhost:5000/api/auth/register' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWE5ZTMxNjkwZWRkYjhmOThkZTM0MGQiLCJpYXQiOjE3NzI3NDEzOTgsImV4cCI6MTc3MzAwMDU5OH0.lOT9QZMqg7DD9p_NJGC8k6W7LcX0j_EVnBgVRMemH7c' \
+--data-raw '{
+ "name" : "test",
+ "email" : "test@gmail.com"   ,
+ "password" : "test123"
+}'
+
+
+===========================================================
+
+
+USER LOGIN API:
+POST  ==>  localhost:5000/api/auth/login
+
+    {
+    "email" : "test@gmail.com"   ,
+    "password" : "test123"
+    }
+
+curl:
+curl --location 'localhost:5000/api/auth/login' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWE5ZTMxNjkwZWRkYjhmOThkZTM0MGQiLCJpYXQiOjE3Nzg1MDg2NzUsImV4cCI6MTc3ODc2Nzg3NX0.HBdvH4tv_yMXNYyaMv0g_DgybaC-TSVg8Tor3gqy3KM' \
+--data-raw '{
+ "email" : "test@gmail.com"   ,
+ "password" : "test123"
+}'
+
+
+
+
