@@ -1,5 +1,6 @@
 const UserModel = require("../model/user.model")
 const jwt = require("jsonwebtoken")
+const emailService = require('../services/email.service')
 
 const userRegisterCtrl = async (req, res, next) => {
     try {
@@ -29,6 +30,11 @@ const userRegisterCtrl = async (req, res, next) => {
             },
             token
         })
+        emailService.sendRegistrationEmail(user.email, user.name)
+            .then(() => {
+                console.log("send mail");
+            })
+            .catch(console.error);
     }
     catch (error) {
         next(error)
