@@ -1,0 +1,11 @@
+
+
+
+worked on login and register api
+    - created schema
+    - setup the google api console
+    - taking(client_id, client_secret , refresh_token)
+    - setup the nodemailer
+
+worked on account api
+    - created the schema
