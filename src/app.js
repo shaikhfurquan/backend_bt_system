@@ -1,8 +1,10 @@
 const express = require('express')
-const authRoutes = require("../src/routes/auth.routes")
 const cors = require("cors")
 const morgan = require("morgan")
 const cookieParser = require("cookie-parser")
+// Routes
+const authRoutes = require("./routes/auth.routes")
+const accountRoutes = require("./routes/account.routes")
 
 const app = express()
 
@@ -19,8 +21,9 @@ app.get('/test', (req, res) => {
     res.status(200).json({ test: "Test Route" });
 })
 
-// Auth Routes
+// Routes
 app.use("/api/auth", authRoutes)
+app.use("/api/accounts", accountRoutes)
 
 
 // Centralized Error Handler (Express Error Middleware)

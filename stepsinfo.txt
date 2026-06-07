@@ -8,4 +8,5 @@ worked on login and register api
     - setup the nodemailer
 
 worked on account api
-    - created the schema
+    - created the schema with indexes
+    - account routes setup
