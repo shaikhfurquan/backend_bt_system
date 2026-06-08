@@ -10,3 +10,6 @@ worked on login and register api
 worked on account api
     - created the schema with indexes
     - account routes setup
+    - creating the auth middleware for checked the login user
+    - route and controller setup
+    

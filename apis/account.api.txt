@@ -1,0 +1,10 @@
+
+ACCOUNT APIS:
+
+CREATE ACCOUNT API:
+POST  ==>  localhost:5000/api/account/create
+
+
+curl:
+curl --location --request POST 'localhost:5000/api/account/create' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTFlZDFkY2RlZjFlZTJiMzMyMjAzYTciLCJpYXQiOjE3ODA5NDU2MzcsImV4cCI6MTc4MTIwNDgzN30.vfXm-PMGHuljK26nMkDKHE0wEnELQLOe7pOwpqCKH2U'

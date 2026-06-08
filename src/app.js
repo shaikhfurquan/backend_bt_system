@@ -23,7 +23,7 @@ app.get('/test', (req, res) => {
 
 // Routes
 app.use("/api/auth", authRoutes)
-app.use("/api/accounts", accountRoutes)
+app.use("/api/account", accountRoutes)
 
 
 // Centralized Error Handler (Express Error Middleware)
