@@ -8,8 +8,13 @@ worked on login and register api
     - setup the nodemailer
 
 worked on account api
-    - created the schema with indexes
+    - created the account schema with idempotencyKey and indexes
     - account routes setup
     - creating the auth middleware for checked the login user
-    - route and controller setup
+    - route and controller setup(account)
+
+
+worked on trasanctions api
+    - created the trasanctions schema with indexes
+    - created the ledger schema with prevent modification and indexes
     
