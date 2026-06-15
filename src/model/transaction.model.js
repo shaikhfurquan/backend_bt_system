@@ -35,13 +35,11 @@ const transactionSchema = new mongoose.Schema({
         unique: true
     },
 
-
-
 }, { timestamps: true })
 
 // Compound index to optimize queries filtering by both user and status both
 transactionSchema.index({ user: 1, status: 1 })
 
-const TransactionModel = mongoose.model("account", transactionSchema)
+const TransactionModel = mongoose.model("transaction", transactionSchema)
 
 module.exports = TransactionModel
