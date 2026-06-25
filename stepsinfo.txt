@@ -17,4 +17,31 @@ worked on account api
 worked on trasanctions api
     - created the trasanctions schema with indexes
     - created the ledger schema with prevent modification and indexes
-    
+    - routes setup
+    - worked on the create trasanctions api(validating request , validating idempotencyKey)
+    - checked account status(for new request like active)
+    - derive sender balance from ledger(calculating the balance in AccountModel)
+    - creating the trasanctions and sessions like creadit, debit and end trasanctions commit trasanctions save also status COMPLETED
+    - setup the email service for sendTransactionEmail, sendTransactionFailureEmail and send email(sendTransactionEmail)
+
+
+worked on the system user api(for sending the money to the user accounts to perform the trasanctions)
+    - added the field of the systemUser in the userModel
+    - now registerd one systemUser (name:system,email:system@test.com , password:test123) and also register one account
+    - worked on the middleware(systemUser middleware)
+
+worked on the create Initial Funds Transfer
+    - routes setup for the initial fund(/system/initial-funds)
+    - controller setup for the create Initial Funds Transfer
+    - debit and creadit ledger entries
+
+
+worked on get accounts of logged in user
+    - route setup(protected route)
+    - controller setup for getting all accounts of logged-in user
+
+
+worked on get balance
+    - route setup(protected route)
+    - controller setup for get account
+

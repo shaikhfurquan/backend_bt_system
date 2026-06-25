@@ -25,7 +25,6 @@ app.get('/test', (req, res) => {
 // Routes
 app.use("/api/auth", authRoutes)
 app.use("/api/account", accountRoutes)
-app.use("/api/account", accountRoutes)
 app.use("/api/transaction", transactionRoutes)
 
 

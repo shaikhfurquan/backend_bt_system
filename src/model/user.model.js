@@ -19,13 +19,21 @@ const userSchema = new mongoose.Schema({
         minlength: [6, "Password should be contain more than 6 characters"],
         select: false
     },
+    
+    // Used internally to identify system user for initial fund allocation
+    systemUser: {
+        type: Boolean,
+        default: false,
+        immutable: true,
+        select: false
+    }
 
 }, { timestamps: true })
 
 
 // Middleware function to hash the user's password before saving to database
 // Runs only when the password field is modified
-userSchema.pre("save", async function()  {
+userSchema.pre("save", async function () {
     if (!this.isModified("password")) {
         return
     }

@@ -6,19 +6,19 @@ USER REGISTER API:
 POST  ==>  localhost:5000/api/auth/register
 
     {
-        "name" : "test",
-        "email" : "test@gmail.com"   ,
-        "password" : "test123"
+        "name": "system",
+        "email": "system@test.com",
+        "password": "test123"
     }
 
 curl:
 curl --location 'localhost:5000/api/auth/register' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWE5ZTMxNjkwZWRkYjhmOThkZTM0MGQiLCJpYXQiOjE3NzI3NDEzOTgsImV4cCI6MTc3MzAwMDU5OH0.lOT9QZMqg7DD9p_NJGC8k6W7LcX0j_EVnBgVRMemH7c' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMyMzRmMDk1NWM3ZGNiY2UzZjc5MjIiLCJpYXQiOjE3ODE2NzUyNDgsImV4cCI6MTc4MTkzNDQ0OH0.eE-0K3UeRiUD9BPN4nC9CFiBg7iUu1f5b40cv0muGso' \
 --data-raw '{
- "name" : "test",
- "email" : "test@gmail.com"   ,
- "password" : "test123"
+    "name": "system",
+    "email": "system@test.com",
+    "password": "test123"
 }'
 
 
@@ -29,8 +29,8 @@ USER LOGIN API:
 POST  ==>  localhost:5000/api/auth/login
 
     {
-    "email" : "test@gmail.com"   ,
-    "password" : "test123"
+        "email" : "test@gmail.com"   ,
+        "password" : "test123"
     }
 
 curl:
@@ -45,3 +45,15 @@ curl --location 'localhost:5000/api/auth/login' \
 
 
 
+{
+ "name" : "furquan",
+ "email" : "s.furquan121@gmail.com",
+ "password" : "furquan123"
+}
+
+
+{
+    "name": "userdemo",
+    "email": "user@demo.com",
+    "password": "test123"
+}

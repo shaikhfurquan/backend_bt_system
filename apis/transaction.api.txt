@@ -1,0 +1,43 @@
+
+TRANSACTION APIS:
+
+INITIAL FUND TRANSFER API:
+POST  ==> localhost:5000/api/transaction/system/initial-funds
+
+{
+    "toAccount" : "6a2712eb7f9fa5f2f0dea0d5",  // accout Id
+    "amount" : 10000, 
+    "idempotencyKey" : "019ee9ff-5767-7c36-84af-bf553bec6112"
+}
+
+curl:
+curl --location 'localhost:5000/api/transaction/system/initial-funds' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMyMzRmMDk1NWM3ZGNiY2UzZjc5MjIiLCJpYXQiOjE3ODIwNDE4MDAsImV4cCI6MTc4MjMwMTAwMH0.BW7xwFvKf72fe3xgCohnEID-qBA61XN0cnXWTtNxeVI' \
+--data '{
+    "toAccount" : "6a2712eb7f9fa5f2f0dea0d5",  
+    "amount" : 10000, 
+    "idempotencyKey" : "019ee9ff-5767-7c36-84af-bf553bec6112"
+}'
+
+
+
+CREATE TRANSACTION API:
+POST  ==>  localhost:5000/api/transaction/create
+    {
+        "fromAccount" : "6a2712eb7f9fa5f2f0dea0d5",  // accout Id
+        "toAccount" : "6a3924baa1b85d1fc1c3ac5b",  // accout Id
+        "amount" : 9000, 
+        "idempotencyKey" : "019eef92-26a3-7fce-8c01-1877752c58fe"
+    }
+
+curl:
+curl --location 'localhost:5000/api/transaction/create' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTFlZDFkY2RlZjFlZTJiMzMyMjAzYTciLCJpYXQiOjE3ODIxMzU4NTksImV4cCI6MTc4MjM5NTA1OX0.PQ48HrIZtfzlAl1WyeuDnj224qC4pMVz_mdn-U1wfj4' \
+--data '{
+    "fromAccount" : "6a2712eb7f9fa5f2f0dea0d5",  
+    "toAccount" : "6a3924baa1b85d1fc1c3ac5b",  
+    "amount" : 9000, 
+    "idempotencyKey" : "019eef92-26a3-7fce-8c01-1877752c58fe"
+}'

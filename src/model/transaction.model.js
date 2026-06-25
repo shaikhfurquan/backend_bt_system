@@ -14,11 +14,11 @@ const transactionSchema = new mongoose.Schema({
         required: [true, "Trasanction must be associated with a to account"],
         index: true
     },
-    status: {
+     status: {
         type: String,
         enum: {
-            values: ["PENDING", "COMPLETED", "FAILED", "REVERSED"],
-            message: "Status either be PENDING , COMPLETED, FAILED OR REVERSED"
+            values: [ "PENDING", "COMPLETED", "FAILED", "REVERSED" ],
+            message: "Status can be either PENDING, COMPLETED, FAILED or REVERSED",
         },
         default: "PENDING"
     },

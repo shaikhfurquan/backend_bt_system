@@ -8,3 +8,24 @@ POST  ==>  localhost:5000/api/account/create
 curl:
 curl --location --request POST 'localhost:5000/api/account/create' \
 --header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTFlZDFkY2RlZjFlZTJiMzMyMjAzYTciLCJpYXQiOjE3ODA5NDU2MzcsImV4cCI6MTc4MTIwNDgzN30.vfXm-PMGHuljK26nMkDKHE0wEnELQLOe7pOwpqCKH2U'
+
+
+
+
+GET ALL USER ACCOUNTS API:
+GET  ==>  localhost:5000/api/account/user-account
+
+curl:
+curl --location 'localhost:5000/api/account/user-account' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMyMzRmMDk1NWM3ZGNiY2UzZjc5MjIiLCJpYXQiOjE3ODIwNDE4MDAsImV4cCI6MTc4MjMwMTAwMH0.BW7xwFvKf72fe3xgCohnEID-qBA61XN0cnXWTtNxeVI'
+
+
+
+
+GET ACCOUNT BALANCE API:
+GET  ==>  localhost:5000/api/account/balance/:accountId
+          localhost:5000/api/account/balance/6a2712eb7f9fa5f2f0dea0d5
+
+curl:
+curl --location 'localhost:5000/api/account/balance/6a2712eb7f9fa5f2f0dea0d5' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTFlZDFkY2RlZjFlZTJiMzMyMjAzYTciLCJpYXQiOjE3ODIxMjg2NjYsImV4cCI6MTc4MjM4Nzg2Nn0.nN8FYNmMumUu6dA6qYcZo8Nki_OVHQMs05kfGeCAcoM'
