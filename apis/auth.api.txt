@@ -44,16 +44,16 @@ curl --location 'localhost:5000/api/auth/login' \
 
 
 
-
-{
- "name" : "furquan",
- "email" : "s.furquan121@gmail.com",
- "password" : "furquan123"
-}
+USER LOGOUT API:
+POST  ==>  localhost:5000/api/auth/logout
 
 
-{
-    "name": "userdemo",
-    "email": "user@demo.com",
-    "password": "test123"
-}
+curl:
+curl --location 'localhost:5000/api/auth/logout' \
+--header 'Content-Type: text/plain' \
+--header 'Cookie: token=' \
+--data '{
+    "toAccount" : "6a2712eb7f9fa5f2f0dea0d5",  // accout Id
+    "amount" : 10000, 
+    "idempotencyKey" : "019ee9ff-5767-7c36-84af-bf553bec6112"
+}'

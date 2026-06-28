@@ -1,0 +1,239 @@
+{
+  "info": {
+    "_postman_id": "96a35e14-aa0c-4c59-8020-ae36c8254904",
+    "name": "Backend_BT_System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33188247"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"userdemo\",\r\n    \"email\": \"user@demo.com\",\r\n    \"password\": \"test123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:5000/api/auth/register",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"name\" : \"furquan\",\r\n \"email\" : \"s.furquan121@gmail.com\",\r\n \"password\" : \"furquan123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:5000/api/auth/login",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"toAccount\" : \"6a2712eb7f9fa5f2f0dea0d5\",  // accout Id\r\n    \"amount\" : 10000, \r\n    \"idempotencyKey\" : \"019ee9ff-5767-7c36-84af-bf553bec6112\"\r\n}"
+            },
+            "url": {
+              "raw": "localhost:5000/api/auth/logout",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "account",
+      "item": [
+        {
+          "name": "create-account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:5000/api/account/create",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "account",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-user-accounts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:5000/api/account/user-account",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "account",
+                "user-account"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-account-balance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:5000/api/account/balance/6a2712eb7f9fa5f2f0dea0d5",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "account",
+                "balance",
+                "6a2712eb7f9fa5f2f0dea0d5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "transaction",
+      "item": [
+        {
+          "name": "create-initial-fund",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"toAccount\" : \"6a2712eb7f9fa5f2f0dea0d5\",  // accout Id\r\n    \"amount\" : 10000, \r\n    \"idempotencyKey\" : \"019ee9ff-5767-7c36-84af-bf553bec6112\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:5000/api/transaction/system/initial-funds",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "transaction",
+                "system",
+                "initial-funds"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create-transaction",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fromAccount\" : \"6a2712eb7f9fa5f2f0dea0d5\",  // accout Id\r\n    \"toAccount\" : \"6a3924baa1b85d1fc1c3ac5b\",  // accout Id\r\n    \"amount\" : 2000, \r\n    \"idempotencyKey\" : \"019efeea-c65b-76b7-8334-e2b5808b81d7\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:5000/api/transaction/create",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "transaction",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
