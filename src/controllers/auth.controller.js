@@ -86,11 +86,11 @@ const userLogoutCtrl = async (req, res, next) => {
         })
     }
 
-    res.cookie("token", "")
+    // res.cookie("token", "")
     await TokenBlackListModel.create({
         token: token
     })
-
+    res.clearCookie('token');
     res.status(200).json({
         message: "User logged out successfully"
     })
